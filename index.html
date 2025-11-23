@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>写给你的话</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: radial-gradient(circle at top, #ffe7ef, #fffdf7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+        .card {
+            max-width: 720px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 22px 20px 18px;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+        .small-tag {
+            font-size: 12px;
+            color: #ff7f9f;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .date {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 16px;
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ffd1df, transparent);
+            margin-bottom: 16px;
+            opacity: 0.7;
+        }
+        .message {
+            font-size: 15px;
+            line-height: 1.9;
+            color: #444;
+            white-space: pre-wrap;
+        }
+        .signature {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 14px;
+            color: #666;
+        }
+        .hint {
+            margin-top: 10px;
+            font-size: 11px;
+            color: #bbb;
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            .card {
+                padding: 18px 16px 14px;
+                border-radius: 16px;
+            }
+            .title { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="small-tag">FOR YOU</div>
+    <div class="title">写给你的话</div>
+    <div class="date" id="date-text"></div>
+    <div class="divider"></div>
+
+    <!-- ⭐⭐ 在下面这个 <p> 里面，写上你真正想对她说的话 ⭐⭐ -->
+    <div class="message">
+我一直在想，用什么方式把这些话告诉你。
+最后还是觉得，想把它们安安静静地放在这个小小的网页里，
+只属于你，也只为你打开。
+
+（在这里，把这段文字替换成你真正想对她说的话。
+可以分成几段，多写一点没关系，这里会自动换行。）
+    </div>
+
+    <!-- ⭐⭐ 在这里写上你的署名（可以是昵称） ⭐⭐ -->
+    <div class="signature">
+—— 写这段话的人
+    </div>
+
+    <div class="hint">
+        这页网页，藏着我一段时间里所有想对你说的话。
+    </div>
+</div>
+
+<script>
+    // 显示今天的日期（她打开时看到的）
+    (function () {
+        const d = new Date();
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+        document.getElementById("date-text").textContent = `写于 ${y} 年 ${m} 月 ${day} 日`;
+    })();
+</script>
+</body>
+</html>
